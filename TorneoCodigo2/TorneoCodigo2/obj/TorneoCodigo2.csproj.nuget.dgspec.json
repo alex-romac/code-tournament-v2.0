@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ByronDaniel\\Documents\\BD\\2sep\\code-tournament-v2.0\\TorneoCodigo\\TorneoCodigo\\TorneoCodigo.csproj": {}
+    "C:\\Users\\ByronDaniel\\Documents\\BD\\2sep\\code-tournament-v2.0\\TorneoCodigo2\\TorneoCodigo2\\TorneoCodigo2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ByronDaniel\\Documents\\BD\\2sep\\code-tournament-v2.0\\TorneoCodigo\\TorneoCodigo\\TorneoCodigo.csproj": {
+    "C:\\Users\\ByronDaniel\\Documents\\BD\\2sep\\code-tournament-v2.0\\TorneoCodigo2\\TorneoCodigo2\\TorneoCodigo2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ByronDaniel\\Documents\\BD\\2sep\\code-tournament-v2.0\\TorneoCodigo\\TorneoCodigo\\TorneoCodigo.csproj",
-        "projectName": "TorneoCodigo",
-        "projectPath": "C:\\Users\\ByronDaniel\\Documents\\BD\\2sep\\code-tournament-v2.0\\TorneoCodigo\\TorneoCodigo\\TorneoCodigo.csproj",
+        "projectUniqueName": "C:\\Users\\ByronDaniel\\Documents\\BD\\2sep\\code-tournament-v2.0\\TorneoCodigo2\\TorneoCodigo2\\TorneoCodigo2.csproj",
+        "projectName": "TorneoCodigo2",
+        "projectPath": "C:\\Users\\ByronDaniel\\Documents\\BD\\2sep\\code-tournament-v2.0\\TorneoCodigo2\\TorneoCodigo2\\TorneoCodigo2.csproj",
         "packagesPath": "C:\\Users\\ByronDaniel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ByronDaniel\\Documents\\BD\\2sep\\code-tournament-v2.0\\TorneoCodigo\\TorneoCodigo\\obj\\",
+        "outputPath": "C:\\Users\\ByronDaniel\\Documents\\BD\\2sep\\code-tournament-v2.0\\TorneoCodigo2\\TorneoCodigo2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ByronDaniel\\NuGet.Config",

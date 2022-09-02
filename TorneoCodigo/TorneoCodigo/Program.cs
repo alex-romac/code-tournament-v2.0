@@ -60,7 +60,7 @@ if (imprimirTabla)
     }
     for (int i = 0; i < 8; i++)
     {
-        Console.WriteLine($"{tablaInteres[i, 0]} | {tablaInteres[i, 1]} | {tabla[i,0]} | {tabla[i, 1]}");
+        Console.WriteLine($"{tablaInteres[i, 0]} | {tablaInteres[i, 1]}% | ${tabla[i,0]} | ${tabla[i, 1]}");
     }
 }
 else
@@ -68,7 +68,7 @@ else
     double tazaInteres = CalcularTazaInteres(45);
     double interesGanado = CalcularInteresGanado(montoInversion, plazoDias, tazaInteres);
     double totalRecibir = CalcularTotalRecibir(montoInversion, interesGanado);
-    Console.WriteLine($"{plazoDias} | {tazaInteres} | {interesGanado} | {totalRecibir}");
+    Console.WriteLine($"{plazoDias} | {tazaInteres}% | ${interesGanado} | ${totalRecibir}");
 
 }
 
