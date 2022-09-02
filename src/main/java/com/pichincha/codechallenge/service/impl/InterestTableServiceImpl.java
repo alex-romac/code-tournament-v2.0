@@ -3,7 +3,9 @@ package com.pichincha.codechallenge.service.impl;
 import com.pichincha.codechallenge.presenter.InterestTablePresenter;
 import com.pichincha.codechallenge.service.InterestTableService;
 import com.pichincha.codechallenge.utils.MaskUtils;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +15,12 @@ import java.util.Objects;
 public class InterestTableServiceImpl implements InterestTableService {
     @Override
     public List<InterestTablePresenter> generateInterestTable(Double yearlyFee, Double amount, Integer yearlyPayments, Integer years) {
+        if (years.compareTo(1) < 0) {
+            throw new ResponseStatusException(HttpStatus.PRECONDITION_FAILED, "El plazo mínimo es 1 año");
+        }
+        if (yearlyPayments.compareTo(12) < 0) {
+            throw new ResponseStatusException(HttpStatus.PRECONDITION_FAILED, "Debe realizar mínimo 12 pagos al año");
+        }
         Double periodicFee = yearlyFee / yearlyPayments;
         int totalPayments = years * yearlyPayments;
         List<InterestTablePresenter> result = new ArrayList<>();
