@@ -25,7 +25,24 @@ public class ChallengeTest {
         ReflectionTestUtils.setField(investmentService, "interestDistributionPresenters", testInterestTable());
         List<InvestmentSimulationPresenter> simulation = investmentService.getSimulation(new BigDecimal("30000"), null);
         Assertions.assertTrue(simulation.size() > 1);
+    }
 
+    @Test
+    public void challengeWithDuration() {
+        ReflectionTestUtils.setField(investmentService, "interestDistributionPresenters", testInterestTable());
+        List<InvestmentSimulationPresenter> simulation = investmentService.getSimulation(new BigDecimal("30000"), 30);
+        Assertions.assertEquals(1, simulation.size());
+    }
+
+    @Test
+    public void challengeWithTable() {
+        ReflectionTestUtils.setField(investmentService, "interestDistributionPresenters", testInterestTable());
+        List<InvestmentSimulationPresenter> simulation = investmentService.getSimulation(new BigDecimal("30000"), null);
+        System.out.println("Plazo en días\tTasa de interés anual\tInterés ganado en USD\tTotal a recibir monto más interes USD\n");
+        simulation.forEach(investmentSimulationPresenter -> {
+            System.out.println(String.valueOf(investmentSimulationPresenter.getDuration()).concat("\t").concat(investmentSimulationPresenter.getFee().concat("\t").concat(investmentSimulationPresenter.getProfit()).concat("\t").concat(investmentSimulationPresenter.getGrandTotal()).concat("\n")));
+        });
+        Assertions.assertTrue(simulation.size() > 1);
     }
 
     private List<InterestDistributionPresenter> testInterestTable() {

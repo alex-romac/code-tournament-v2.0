@@ -1,8 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.pichincha.codechallenge.challenge.ChallengeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-09-02T15:45:53" hostname="msgoon6" time="9.59">
+<testsuite name="com.pichincha.codechallenge.challenge.ChallengeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-09-02T16:09:15" hostname="msgoon6" time="0.301">
   <properties/>
-  <testcase name="challenge()" classname="com.pichincha.codechallenge.challenge.ChallengeTest" time="9.59"/>
-  <system-out><![CDATA[10:45:53.445 [Test worker] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'interestDistributionPresenters' of type [null] on target object [com.pichincha.codechallenge.service.impl.InvestmentServiceImpl@f5c79a6] or target class [class com.pichincha.codechallenge.service.impl.InvestmentServiceImpl] to value [[com.pichincha.codechallenge.presenter.InterestDistributionPresenter@669253b7, com.pichincha.codechallenge.presenter.InterestDistributionPresenter@5305c37d, com.pichincha.codechallenge.presenter.InterestDistributionPresenter@51a06cbe, com.pichincha.codechallenge.presenter.InterestDistributionPresenter@3dddbe65, com.pichincha.codechallenge.presenter.InterestDistributionPresenter@49a64d82, com.pichincha.codechallenge.presenter.InterestDistributionPresenter@344561e0, com.pichincha.codechallenge.presenter.InterestDistributionPresenter@66d23e4a, com.pichincha.codechallenge.presenter.InterestDistributionPresenter@36ac8a63]]
+  <testcase name="challengeWithTable()" classname="com.pichincha.codechallenge.challenge.ChallengeTest" time="0.301"/>
+  <system-out><![CDATA[11:09:15.335 [Test worker] DEBUG org.springframework.test.util.ReflectionTestUtils - Setting field 'interestDistributionPresenters' of type [null] on target object [com.pichincha.codechallenge.service.impl.InvestmentServiceImpl@72bca894] or target class [class com.pichincha.codechallenge.service.impl.InvestmentServiceImpl] to value [[com.pichincha.codechallenge.presenter.InterestDistributionPresenter@433ffad1, com.pichincha.codechallenge.presenter.InterestDistributionPresenter@1fc793c2, com.pichincha.codechallenge.presenter.InterestDistributionPresenter@2575f671, com.pichincha.codechallenge.presenter.InterestDistributionPresenter@329a1243, com.pichincha.codechallenge.presenter.InterestDistributionPresenter@ecf9fb3, com.pichincha.codechallenge.presenter.InterestDistributionPresenter@2d35442b, com.pichincha.codechallenge.presenter.InterestDistributionPresenter@27f9e982, com.pichincha.codechallenge.presenter.InterestDistributionPresenter@4593ff34]]
+Plazo en días	Tasa de interés anual	Interés ganado en USD	Total a recibir monto más interes USD
+
+30	2%	$50.0	$30050.00
+
+60	2.20%	$110.00000000000001	$30110.00
+
+90	2.40%	$180.0	$30180.00
+
+120	2.60%	$260.0	$30260.00
+
+180	2.80%	$420.0	$30420.00
+
+240	3%	$600.0	$30600.00
+
+300	3.20%	$800.0	$30800.00
+
+360	3.40%	$1020.0000000000001	$31020.00
+
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
