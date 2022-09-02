@@ -1,44 +1,74 @@
-import java.util.DoubleSummaryStatistics
+import java.text.NumberFormat
+import kotlin.math.pow
 
 fun main(args: Array<String>) {
 
 
-    /*val inputAmount = readLine()
-    try {
-        val a: Double = inputAmount?.toDouble()
-    } catch (exception: Exception) {
-        println("The amount should be a number")
-        return 0.0
-    }*/
+    var loanValue: Double?
+    var annualInterestRate: Double?
+    var timeInYears: Double?
+    val paymentsPerYear = 12
 
-//    val time = readLine()
-
-//    println(a)
-    val amount = 30_000
-
-    val annualInterestRowOne : Pair<Double, IntRange> = Pair(2.00, IntRange(1, 30))
-    val annualInterestRowOTwo : Pair<Double, IntRange> = Pair(2.20, IntRange(31, 60))
-    val annualInterestRowThree : Pair<Double, IntRange> = Pair(2.40, IntRange(61, 90))
-    val annualInterestRowFour : Pair<Double, IntRange> = Pair(2.60, IntRange(91, 120))
-    val annualInterestRowFive : Pair<Double, IntRange> = Pair(2.80, IntRange(121, 180))
-    val annualInterestRowSix : Pair<Double, IntRange> = Pair(3.00, IntRange(181, 240))
-    val annualInterestRowSeven : Pair<Double, IntRange> = Pair(3.20, IntRange(241, 300))
-    val annualInterestRowEigth : Pair<Double, IntRange> = Pair(3.40, IntRange(301, 360))
-
-
-
-
-    for (j in 200..340 step 20) {
-        for (i in 30..360 step 30) {
-            val annualInterestRate: Double = j.toDouble()
-            print("Plazo en dias: $i")
-            print(" ")
-            print("Tasa de interés anual: ${annualInterestRate / 100}")
-            print(" ")
-            println("Interés ganado ${(amount * ((annualInterestRate / 100) / 100 * annualInterestRate / 360))}")
-
+    println("Por favor ingrese la siguiente información")
+    do {
+        println("Valor del préstamo: ")
+        loanValue = readLine()!!.toDoubleOrNull()
+        if (loanValue == null) {
+            println("No es un valor válido, intente de nuevo")
         }
+    } while (loanValue == null)
+
+    do {
+        println("Tasa de interes anual: ")
+        annualInterestRate = readLine()!!.toDoubleOrNull()
+        if (annualInterestRate == null) {
+            println("No es un valor válido, intente de nuevo")
+        }
+    } while (annualInterestRate == null)
+
+    do {
+        println("Plazo en años: ")
+        timeInYears = readLine()!!.toDoubleOrNull()
+        if (timeInYears == null) {
+            println("No es un valor válido, intente de nuevo")
+        }
+    } while (timeInYears == null)
+
+    val monthlyInterest: Double = annualInterestRate / (12 * 100)
+    println(monthlyInterest)
+    val monthlyPayment: Double =
+        loanValue * (monthlyInterest / (1 - (1 + monthlyInterest).pow((timeInYears * -1))))
+
+
+    val pattern =
+        "%" + 20 + "s%" + 20 + "s%" + 20 + "s%" + 20 + "s%" + 20 + "s"
+
+    System.out.printf(
+        pattern,
+        "N DE CUOTA",
+        "INTERÉS DEL PERIODO",
+        "CAPITAL AMORTIZADO",
+        "CUOTA A PAGAR",
+        "SALDO REMANENTE"
+    )
+    println()
+
+    val nf = NumberFormat.getCurrencyInstance()
+
+    for (quota in 1..paymentsPerYear) {
+//        val amountInterest: Double = loanValue!!.times(monthlyInterest)
+        val amountInterest: Double = loanValue!!.minus(monthlyInterest)
+        val amountPrincipal = monthlyPayment.minus(amountInterest)
+        loanValue = loanValue.minus(amountPrincipal)
+        System.out.printf(
+            pattern,
+            quota,
+            nf.format(amountInterest),
+            nf.format(monthlyInterest),
+            nf.format(amountPrincipal),
+            nf.format(loanValue)
+        )
+        println()
 
     }
-
 }
