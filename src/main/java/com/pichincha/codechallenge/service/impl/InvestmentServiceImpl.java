@@ -43,8 +43,7 @@ public class InvestmentServiceImpl implements InvestmentService {
     }
 
     private InvestmentSimulationPresenter generateSingleSimulation(BigDecimal amount, InterestDistributionPresenter interestDistributionPresenter, Integer daysDuration) {
-        BigDecimal yearProfit = amount.multiply((interestDistributionPresenter.getFee().multiply(BigDecimal.valueOf(daysDuration))));
-        Double profit = yearProfit.doubleValue() / 360;
+        Double profit = amount.doubleValue() * ((interestDistributionPresenter.getFee().divide(new BigDecimal("100")).multiply(BigDecimal.valueOf(daysDuration))).doubleValue() / 360);
         BigDecimal grandTotal = amount.add(new BigDecimal(profit));
         return InvestmentSimulationPresenter.builder()
                 .duration(String.valueOf(daysDuration))
