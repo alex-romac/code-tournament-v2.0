@@ -12,6 +12,8 @@ public class Torneo {
 }
 
 class GenerarData {
+    private static List<Rate> rates = getRate(null);
+
     private static void init() {
         rates.add(Rate.builder().rate(2.00f).min(1).max(30).build());
         rates.add(Rate.builder().rate(2.20f).min(31).max(60).build());
@@ -21,22 +23,21 @@ class GenerarData {
         rates.add(Rate.builder().rate(3.00f).min(181).max(240).build());
         rates.add(Rate.builder().rate(3.20f).min(241).max(300).build());
         rates.add(Rate.builder().rate(3.40f).min(301).max(360).build());
-
     }
-
-    private static List<Rate> rates = getRate(null);
 
     private static List<Rate> getRate(Integer days) {
         List<Rate> ratesLocal = new ArrayList<>();
-        if (!validValues(days)) {
-            return null;
-        }
-        for (Rate rate : rates) {
-            if (days == null || rate.getMin() <= days && days <= rate.getMax()) {
-                ratesLocal.add(rate);
+        if(days != null) {
+
+            if (!validValues(days)) {
+                return null;
+            }
+            for (Rate rate : rates) {
+                if (days == null || rate.getMin() <= days && days <= rate.getMax()) {
+                    ratesLocal.add(rate);
+                }
             }
         }
-
         return ratesLocal;
     }
 
