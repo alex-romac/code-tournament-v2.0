@@ -77,7 +77,7 @@ const amortTable = () => {
   const table: any = {};
   let remainAmmount = ammount;
   for (let feeNumber = 1; feeNumber <= paymentsNumber; feeNumber++) {
-    const periodInterest = remainAmmount * (interest / 100);
+    const periodInterest = remainAmmount * (interest / paymentsNumber / 100);
     const amortizedCapital =
       remainAmmount < 0.05 ? 0 : ammount / paymentsNumber;
     table[feeNumber] = {
@@ -91,4 +91,4 @@ const amortTable = () => {
   return table;
 };
 
-calcAmortTable();
+export { calcAmortTable };
