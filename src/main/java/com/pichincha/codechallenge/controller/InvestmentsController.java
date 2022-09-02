@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.websocket.server.PathParam;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class InvestmentsController {
     private InvestmentService investmentService;
 
     @GetMapping("/simmulation")
-    public List<InvestmentSimulationPresenter> generateSimulation(@RequestParam BigDecimal amount, @RequestParam Integer daysDuration) {
+    public List<InvestmentSimulationPresenter> generateSimulation(@RequestParam BigDecimal amount, @PathParam("daysDuration") Integer daysDuration) {
         //TODO logging
         return investmentService.getSimulation(amount, daysDuration);
     }
