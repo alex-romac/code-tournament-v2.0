@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -44,8 +43,9 @@ public class InvestmentServiceImpl implements InvestmentService {
     }
 
     private InvestmentSimulationPresenter generateSingleSimulation(BigDecimal amount, InterestDistributionPresenter interestDistributionPresenter, Integer daysDuration) {
-        BigDecimal profit = amount.multiply((interestDistributionPresenter.getFee().multiply(BigDecimal.valueOf(daysDuration)).divide(new BigDecimal("360"), RoundingMode.HALF_UP).setScale(2, RoundingMode.HALF_UP)));
-        BigDecimal grandTotal = amount.add(profit);
+        BigDecimal yearProfit = amount.multiply((interestDistributionPresenter.getFee().multiply(BigDecimal.valueOf(daysDuration))));
+        Double profit = yearProfit.doubleValue() / 360;
+        BigDecimal grandTotal = amount.add(new BigDecimal(profit));
         return InvestmentSimulationPresenter.builder()
                 .duration(String.valueOf(daysDuration))
                 .fee(String.valueOf(interestDistributionPresenter.getFee()).concat("%"))
