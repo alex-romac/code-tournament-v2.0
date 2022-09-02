@@ -33,8 +33,8 @@ const interestRate = {
   },
 };
 
-const calcTableValues = (interestKey, ammount) => {
-  const term = interestRate[interestKey].maximum;
+const calcTableValues = (interestKey, ammount, termino) => {
+  const term = termino ? termino : interestRate[interestKey].maximum;
   const interest = Number(interestKey).toFixed(2);
   const gain = (ammount * (((interest / 100) * term) / 360)).toFixed(2);
 
@@ -45,10 +45,10 @@ const calcTableValues = (interestKey, ammount) => {
   };
 };
 
-const investmentSimulator = (ammount, term) => {
+const investmentSimulator = (ammount, termino) => {
   let table = {};
 
-  if (!term) {
+  if (!termino) {
     table = Object.keys(interestRate).map((interestKey) => {
       const { term, interest, gain } = calcTableValues(interestKey, ammount);
       return {
@@ -59,6 +59,27 @@ const investmentSimulator = (ammount, term) => {
       };
     });
     return table;
+  }
+
+  if (termino > 0 && termino <= 360) {
+    console.log(termino);
+    const interestKey = Object.keys(interestRate).filter((key) => {
+      return (
+        termino <= interestRate[key].maximum &&
+        termino > interestRate[key].minimum
+      );
+    })[0];
+    const { term, interest, gain } = calcTableValues(
+      interestKey,
+      ammount,
+      Number(termino)
+    );
+    return {
+      term,
+      interest: `${interest}%`,
+      gain: `\$${gain}`,
+      total: `\$${Number(ammount + gain).toFixed(2)}`,
+    };
   }
 };
 
