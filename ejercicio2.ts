@@ -25,7 +25,7 @@ const userInputCmd = (
   });
 };
 
-const enterAmmount = () => {
+const calcAmortTable = () => {
   userInputCmd(
     "Ingrese cantidad préstamo: ",
     (value) => !isNaN(Number(value)) && Number(value) > 0,
@@ -91,4 +91,4 @@ const amortTable = () => {
   return table;
 };
 
-enterAmmount();
+calcAmortTable();
