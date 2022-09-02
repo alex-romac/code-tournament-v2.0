@@ -1,0 +1,15 @@
+C:\Users\ByronDaniel\Documents\BD\2sep\TorneoCodigo\TorneoCodigo\bin\Debug\net6.0\TorneoCodigo.exe
+C:\Users\ByronDaniel\Documents\BD\2sep\TorneoCodigo\TorneoCodigo\bin\Debug\net6.0\TorneoCodigo.deps.json
+C:\Users\ByronDaniel\Documents\BD\2sep\TorneoCodigo\TorneoCodigo\bin\Debug\net6.0\TorneoCodigo.runtimeconfig.json
+C:\Users\ByronDaniel\Documents\BD\2sep\TorneoCodigo\TorneoCodigo\bin\Debug\net6.0\TorneoCodigo.dll
+C:\Users\ByronDaniel\Documents\BD\2sep\TorneoCodigo\TorneoCodigo\bin\Debug\net6.0\TorneoCodigo.pdb
+C:\Users\ByronDaniel\Documents\BD\2sep\TorneoCodigo\TorneoCodigo\obj\Debug\net6.0\TorneoCodigo.csproj.AssemblyReference.cache
+C:\Users\ByronDaniel\Documents\BD\2sep\TorneoCodigo\TorneoCodigo\obj\Debug\net6.0\TorneoCodigo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ByronDaniel\Documents\BD\2sep\TorneoCodigo\TorneoCodigo\obj\Debug\net6.0\TorneoCodigo.AssemblyInfoInputs.cache
+C:\Users\ByronDaniel\Documents\BD\2sep\TorneoCodigo\TorneoCodigo\obj\Debug\net6.0\TorneoCodigo.AssemblyInfo.cs
+C:\Users\ByronDaniel\Documents\BD\2sep\TorneoCodigo\TorneoCodigo\obj\Debug\net6.0\TorneoCodigo.csproj.CoreCompileInputs.cache
+C:\Users\ByronDaniel\Documents\BD\2sep\TorneoCodigo\TorneoCodigo\obj\Debug\net6.0\TorneoCodigo.dll
+C:\Users\ByronDaniel\Documents\BD\2sep\TorneoCodigo\TorneoCodigo\obj\Debug\net6.0\refint\TorneoCodigo.dll
+C:\Users\ByronDaniel\Documents\BD\2sep\TorneoCodigo\TorneoCodigo\obj\Debug\net6.0\TorneoCodigo.pdb
+C:\Users\ByronDaniel\Documents\BD\2sep\TorneoCodigo\TorneoCodigo\obj\Debug\net6.0\TorneoCodigo.genruntimeconfig.cache
+C:\Users\ByronDaniel\Documents\BD\2sep\TorneoCodigo\TorneoCodigo\obj\Debug\net6.0\ref\TorneoCodigo.dll
