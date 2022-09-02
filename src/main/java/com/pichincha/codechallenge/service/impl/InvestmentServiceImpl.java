@@ -39,10 +39,11 @@ public class InvestmentServiceImpl implements InvestmentService {
                 return interestDistributionPresenter;
             }
         }
+        throw new ResponseStatusException(HttpStatus.PRECONDITION_FAILED, "El plazo máximo permitido es 360 días");
     }
 
     private InvestmentSimulationPresenter generateSingleSimmulation(BigDecimal amount, InterestDistributionPresenter interestDistributionPresenter) {
-        
+
         return null;
     }
 
