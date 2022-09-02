@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.pichincha.codechallenge.challenge.ChallengeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-09-02T14:33:28" hostname="msgoon6" time="4.541">
+  <properties/>
+  <testcase name="challenge()" classname="com.pichincha.codechallenge.challenge.ChallengeTest" time="4.541"/>
+  <system-out><![CDATA[Test Works
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
