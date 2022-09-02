@@ -24,17 +24,33 @@ public class CodeChallengeApplication {
         do {
             System.out.println("Ingrese la cantidad de años: ");
             source = reader.readLine();
-        } while (!isNumber(source));
+        } while (!isInteger(source));
         years = Integer.parseInt(source);
-        interestTableService.generateInterestTable(12.0, 85000.0, 12, years);
+        do {
+            System.out.println("Ingrese la cantidad de pagos por año: ");
+            source = reader.readLine();
+        } while (!isInteger(source));
+        paymentsPerYear = Integer.parseInt(source);
+        interestTableService.generateInterestTable(12.0, 85000.0, paymentsPerYear, years);
         SpringApplication.run(CodeChallengeApplication.class, args);
     }
 
-    public static boolean isNumber(String source) {
+    public static boolean isInteger(String source) {
+        try {
+            Integer.parseInt(source);
+            return true;
+        } catch (NumberFormatException e) {
+            System.out.println("El valor no es entero");
+            return false;
+        }
+    }
+
+    public static boolean isDouble(String source) {
         try {
             Double.parseDouble(source);
             return true;
         } catch (NumberFormatException e) {
+            System.out.println("El valor no es un número");
             return false;
         }
     }
